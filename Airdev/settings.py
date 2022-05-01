@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,15 +21,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-dosq*v@0g#oahbu^48ik^2ced@ip@hazu)8$vka@rm3&*!q2y2'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['206.189.134.136']
 
 
+
+DEBUG = False
+ALLOWED_HOSTS = []
+
+SECRET_KEY = os.environ['SECRET_KEY']
+
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
@@ -86,16 +87,27 @@ WSGI_APPLICATION = 'Airdev.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#      'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'todo-1',
+#         'USER': 'postgres',
+#         'PASSWORD': '2000',
+#         'HOST': 'localhost',
+#         'PORT': '5435',
+#   }
+# }
 DATABASES = {
-     'default': {
+    'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'todo-1',
-        'USER': 'postgres',
-        'PASSWORD': '2000',
-        'HOST': 'localhost',
-        'PORT': '5435',
-  }
+        'NAME':  'todo',
+        'USER' : 'todouser',
+        'PASSWORD' : '2000',
+        'HOST' : 'localhost',
+        'PORT' : '',
+    }
 }
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
