@@ -1,24 +1,6 @@
 version: '3.7'
 
 services:
-  # web:
-  #   build: 
-  #     context: .
-  #   command: gunicorn --bind 0.0.0.0:8000 Airdev.wsgi --workers=4
-  #   volumes:
-  #     - static_volume:/code/static
-  #     - media_volume:/code/media
-  #   expose:
-  #     - "8000"
-  #   environment:
-  #     - DB_HOST=db
-  #     - DB_NAME=todo
-  #     - DB_USER=airdev
-  #     - DB_PASS=2000
-  #   networks:
-  #     - django-network
-  #   depends_on:
-  #     - db
   web:
     volumes:
       - static:/code/static
@@ -45,18 +27,6 @@ services:
     volumes: 
       - db:/var/lib/postgresql/data
   nginx:
-    # build: nginx
-    # restart: always
-    # volumes:
-    #   - static_volume:/app/static
-    #   - media_volume:/app/media
-    # ports:
-    #   - "80:80"
-    # depends_on:
-    #   - web
-    # networks:
-    #   - django-network
-    
     build: nginx
     restart: always
     volumes:
@@ -65,9 +35,6 @@ services:
       - "80:80"
     depends_on:
       - web
-# networks:
-#   django-network:
-#     name: django-network
 volumes: 
   static:
   db:
