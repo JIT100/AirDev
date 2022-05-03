@@ -36,4 +36,3 @@ class TodoTest(APITestCase):
             access_token=user
             response=self.client.get(reverse('todo_list'),HTTP_AUTHORIZATION=f'Bearer {access_token}')
             self.assertEqual(response.status_code, 200)
-        print('sucess')
