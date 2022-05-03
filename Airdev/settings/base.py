@@ -22,7 +22,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 
-ALLOWED_HOSTS = ['206.189.134.136']
 
 # Application definition
 
@@ -83,26 +82,6 @@ WSGI_APPLICATION = 'Airdev.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#      'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'todo-1',
-#         'USER': 'postgres',
-#         'PASSWORD': '2000',
-#         'HOST': 'localhost',
-#         'PORT': '5435',
-#   }
-# }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':  'todo',
-        'USER' : 'todouser',
-        'PASSWORD' : '2000',
-        'HOST' : 'localhost',
-        'PORT' : '',
-    }
-}
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 # Password validation
