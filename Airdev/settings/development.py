@@ -6,7 +6,18 @@ SECRET_KEY = 'django-insecure-dosq*v@0g#oahbu^48ik^2ced@ip@hazu)8$vka@rm3&*!q2y2
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+ALLOWED_HOSTS = []
 
+DATABASES = {
+     'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'todo-1',
+        'USER': 'postgres',
+        'PASSWORD': '2000',
+        'HOST': 'localhost',
+        'PORT': '5435',
+  }
+}
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=5),
