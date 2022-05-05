@@ -1,8 +1,9 @@
 from .base import *
 import os
+from decouple import config
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-dosq*v@0g#oahbu^48ik^2ced@ip@hazu)8$vka@rm3&*!q2y2'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -11,11 +12,10 @@ ALLOWED_HOSTS = ['127.0.0.1']
 DATABASES = {
      'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'todo-1',
-        'USER': 'postgres',
-        'PASSWORD': '2000',
-        'HOST': 'localhost',
-        'PORT': '5435',
+        'HOST': os.environ.get('DB_HOST'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASS'),
   }
 }
 SIMPLE_JWT = {

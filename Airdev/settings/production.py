@@ -5,8 +5,9 @@ from django.core.management.utils import get_random_secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-SECRET_KEY = get_random_secret_key()
-ALLOWED_HOSTS = ['139.59.27.206']
+# SECRET_KEY = get_random_secret_key()
+SECRET_KEY = config('SECRET_KEY')
+ALLOWED_HOSTS = ['139.59.27.206','localhost']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
