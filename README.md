@@ -74,12 +74,12 @@ Assuming you install docker-compose (https://docs.docker.com/compose/)
 
 * If the container is running, Then open another terminal & Run this Below Script
 
-    ** docker-compose exec web python3 manage.py test
+    * docker-compose exec web python3 manage.py test
 
 * After running The test, You can see the 5 test script will run & out of which 2 will fail. It's to be expected. The reasons are below.
 
-    ** 2 of those fail test are to demonstrate than unauthorized user can't access any of the Todo API. First they needs to sign in or Sign up depending on they have account or not. 
-    ** Other 3 tests are there to demonstrate that authenticated user can login & create todo & retrive todo/task data. 
+    * 2 of those fail test are to demonstrate than unauthorized user can't access any of the Todo API. First they needs to sign in or Sign up depending on they have account or not. 
+    * Other 3 tests are there to demonstrate that authenticated user can login & create todo & retrive todo/task data. 
 
 
 ### Live VPS Server ### 
